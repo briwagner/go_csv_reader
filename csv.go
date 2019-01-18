@@ -20,6 +20,7 @@ func (p *person) sayName() string {
 }
 
 func main() {
+	// Todo: take filename from stdin
 	b, err := ioutil.ReadFile("classStats")
 
 	r := csv.NewReader(strings.NewReader(string(b)))
@@ -29,7 +30,7 @@ func main() {
 	totalRecords := len(records)
 	fmt.Printf("%v records", totalRecords)
 
-	// How to dynamically set the size here?
+	// dynamically set the size
 	peoples := make([]person, totalRecords)
 
 	if err != nil {
